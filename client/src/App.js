@@ -1,29 +1,33 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-const movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
-];
 
 function App() {
+    
+  const [movieList, setMovieList] = useState([])
+  
+    useEffect(() => {
+    fetch(`http://localhost:8080/movies`)
+    .then(res => res.json())
+    .then(data => {
+      setMovieList(data);
+    })
+  },[])
+ 
   return (
-    <div className="movielist">
-      <header className="movielist-header">
-        <p>
+      <div className="App">
+        {/* <Routes>
+          <Route path="/" element={<Homepage />} /> */}
+          {/* <Route path="/movies" element={<Movie />} />
+        </Routes> */}
+        <h3>Movies</h3>
           <ul>
-            {movies.map(movie => {
-              return <li>{movie.title}</li>
+            {movieList.map(movie => {
+              return <li>{movie.title}<br></br><img src={movie.img} alt='Pic' height='200' width='200'/></li>
             })}
           </ul>
-        </p>
-       
-      </header>
-    </div>
+      </div>
   );
 }
 
