@@ -1,6 +1,8 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Searchbar from "./Searchbar";
+import Container from 'react-bootstrap/Container';
 
 
 function App() {
@@ -14,20 +16,35 @@ function App() {
       setMovieList(data);
     })
   },[])
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s');
+
+  const filterMovies = (movieList, query) => {
+    if (!query) {
+      return movieList;
+    }
+
+    return movieList.filter((movie) => {
+      const searchTitle = movie.title.toLowerCase();
+      return searchTitle.includes(query);
+    })
+  }
+
+  const filteredMovies = filterMovies(movieList, query)
  
   return (
+    <>
+    <Searchbar />
       <div className="App">
-        {/* <Routes>
-          <Route path="/" element={<Homepage />} /> */}
-          {/* <Route path="/movies" element={<Movie />} />
-        </Routes> */}
         <h3>Movies</h3>
           <ul>
-            {movieList.map(movie => {
-              return <li>{movie.title}<br></br><img src={movie.img} alt='Pic' height='200' width='200'/></li>
+            {filteredMovies.map(movie => {
+              return <li key={movie.id}>{movie.title}<br></br><img src={movie.img} alt='Pic' height='200' width='200'/></li>
             })}
           </ul>
       </div>
+    </>
   );
 }
 
