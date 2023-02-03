@@ -18,5 +18,4 @@ app.get('/movies', (req, res) => {
     knex('movies').select('*').then(data => res.status(200).send(data))
 })
 
-
 app.listen(port, () => console.log(`Express server is listening on port ${port}.`));

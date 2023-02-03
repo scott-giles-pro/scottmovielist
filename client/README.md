@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+Made it to the frontend of level 3; need to add the backend functionality to add movies to the database
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+Mini-App Challenge: Movie List
+What is Movie List?
+Movie List is a prompt for a full-stack application.
 
-### `npm start`
+While you're working through each level, try to only use official documentation. Try to not use Stack Overflow, your own notes, past sprint code, or any other external resources. This will help you develop familiarity with the docs as well as get you acclimated to a real test-like environment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you do need to reference past code/Stack Overflow, write down what topics you needed extra help on. Then, go find these topics in the official documentation.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Setup:
+Create an empty git repository with a client and server directory.
+Link this repository to a new repository on GitHub as your remote.
+Submitting the project:
+Submit a link to your repository below.
+Level 0
+Build a frontend using create-react-app in your client directory.
+Display a list of movies from hardcoded data.
+You can use the following data:
+const movies = [
+  {title: 'Mean Girls'},
+  {title: 'Hackers'},
+  {title: 'The Grey'},
+  {title: 'Sunshine'},
+  {title: 'Ex Machina'},
+];
 
-### `npm test`
+Level 1
+Establish a RESTful API using express persisting data with PostgreSQL in your server directory.
+Confirm, routes using Postman
+Refactor your front end to get the list of movie titles from the server, instead of using a hardcoded list of movie titles
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Level 2
+Add a search bar so that a user may see if a movie is in the list.
+After a user submits the search, display all matches (or partial matches) to that title.
 
-### `npm run build`
+Level 3
+Add an input field for users to add movies.
+Allow users to delete added movies.
+Display only user added movies, not the hardcoded data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Level 4
+Add a button to each list item that allows the user to toggle a 'watched' property.
+Add two buttons to allow the users to toggle between a list of 'watched' movies and movies 'to watch'.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Level 5
+Add a panel of movie information that appears when the title is clicked (consider starting with hardcoded information)
+Refactor the watch toggle to be part of the movie information panel
+Get movie information from the The Movie Database API (https://www.themoviedb.org/documentation/api) and store it locally when a new movie is added to the database.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# scottmovielist
+Stretch Goals
+Implement a user system NOT a login system, where different users can have their own ratings
+Add a way for the user to add their own rating
+Add a sorting mechanism so the user can sort on rating or other properties
+Refactor search to allow users to search for movies with a specific director or actor/actress
+Provide functionality in the UI that allows the user to find other movies that actors have been in.
+Push the app to deploy
